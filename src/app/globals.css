@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --sayada-blue: #2A2A72;
+  --sayada-blue-light: #5A5AF2;
+  --sayada-dark: #0F0F1A;
+  --sayada-card: #1A1A2E;
+  --sayada-border: #2A2A4A;
+  --sayada-text: #E0E0F0;
+  --sayada-muted: #8888AA;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--sayada-dark);
+  color: var(--sayada-text);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #5A5AF2 0%, #8B5CF6 50%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: linear-gradient(var(--sayada-card), var(--sayada-card)),
+    linear-gradient(135deg, #5A5AF2, #8B5CF6);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px rgba(90, 90, 242, 0.15);
 }
